@@ -43,6 +43,8 @@ jobs:
     - name: Run Elasticsearch using start-local
       run: |
         curl -fsSL https://elastic.co/start-local | sh -s -- -v ${{ matrix.es-version }} -esonly
+      env:
+        ES_LOCAL_PASSWORD: password
 
     - name: Integration tests
       run: |
